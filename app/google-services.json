@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "974758013281",
+    "project_id": "sociopulse-1446c",
+    "storage_bucket": "sociopulse-1446c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:974758013281:android:04db1d9cbddd3000943d20",
+        "android_client_info": {
+          "package_name": "com.avinash.chatx"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQMN27cZUunMFSMXwPJGMCvvH1F3UQ_OQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
