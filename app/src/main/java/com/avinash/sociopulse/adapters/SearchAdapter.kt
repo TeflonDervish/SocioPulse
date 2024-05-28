@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.avinash.sociopulse.R
 import com.avinash.sociopulse.models.User
 import com.avinash.sociopulse.util.UserUtil
+import com.bumptech.glide.Glide
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter
 import com.firebase.ui.firestore.FirestoreRecyclerOptions
 import com.google.firebase.firestore.FirebaseFirestore
@@ -31,6 +32,12 @@ class SearchAdapter(options: FirestoreRecyclerOptions<User>, val context: Contex
 
     override fun onBindViewHolder(holder: SearchViewHolder, position: Int, model: User) {
         holder.nameText.text = model.name
+
+        Glide.with(context)
+            .load(model.imageUrl)
+            .centerCrop()
+            .placeholder(R.drawable.person_icon_black)
+            .into(holder.userImage)
 
         if (UserUtil.user?.following?.contains(snapshots.getSnapshot(holder.absoluteAdapterPosition).id)!!) {
             holder.followButton.text = context.getString(R.string.following)

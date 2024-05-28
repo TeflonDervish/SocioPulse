@@ -2,9 +2,11 @@ package com.avinash.sociopulse.adapters
 
 import android.content.Context
 import android.content.Intent
+import android.media.Image
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.GridLayout
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -28,6 +30,7 @@ class FeedAdapter(options: FirestoreRecyclerOptions<Post>, val context: Context)
     FirestoreRecyclerAdapter<Post, FeedAdapter.FeedViewHolder>(options) {
 
     class FeedViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val userImage: ImageView = itemView.findViewById(R.id.user_image)
         val postImage: ImageView = itemView.findViewById(R.id.feed_post_image)
         val likeIcon: ImageView = itemView.findViewById(R.id.post_like_btn)
         val commentIcon: ImageView = itemView.findViewById(R.id.post_comment_btn)
@@ -57,6 +60,12 @@ class FeedAdapter(options: FirestoreRecyclerOptions<Post>, val context: Context)
             .centerCrop()
             .placeholder(R.drawable.placeholder_image)
             .into(holder.postImage)
+
+        Glide.with(context)
+            .load(model.user.imageUrl)
+            .centerCrop()
+            .placeholder(R.drawable.person_icon_black)
+            .into(holder.userImage)
 
         val firestore = FirebaseFirestore.getInstance()
         val userId = FirebaseAuth.getInstance().currentUser?.uid
