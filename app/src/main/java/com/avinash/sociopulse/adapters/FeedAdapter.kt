@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.avinash.sociopulse.CommentsActivity
 import com.avinash.sociopulse.R
 import com.avinash.sociopulse.models.Post
+import com.avinash.sociopulse.util.UserUtil
 import com.bumptech.glide.Glide
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter
 import com.firebase.ui.firestore.FirestoreRecyclerOptions
@@ -109,6 +110,10 @@ class FeedAdapter(options: FirestoreRecyclerOptions<Post>, val context: Context)
                                     R.drawable.like_icon_outline
                                 )
                             )
+                            val postMake =
+                                Post(post.text, post.imageUrl, post.user!!, System.currentTimeMillis(), post.likeList)
+                            postDocument.set(postMake)
+
                         } else {
                             userId?.let { userId ->
                                 post.likeList.add(userId)
@@ -119,6 +124,9 @@ class FeedAdapter(options: FirestoreRecyclerOptions<Post>, val context: Context)
                                     R.drawable.icon_like_fill
                                 )
                             )
+                            val postMake =
+                                Post(post.text, post.imageUrl, post.user!!, System.currentTimeMillis(), post.likeList)
+                            postDocument.set(postMake)
                         }
                     }
 //                    Setting the post details of current user: Updated One
