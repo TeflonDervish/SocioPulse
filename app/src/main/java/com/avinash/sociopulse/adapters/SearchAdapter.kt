@@ -1,4 +1,4 @@
-package com.avinash.chatx.adapters
+package com.avinash.sociopulse.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -8,9 +8,9 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import com.avinash.chatx.R
-import com.avinash.chatx.models.User
-import com.avinash.chatx.util.UserUtil
+import com.avinash.sociopulse.R
+import com.avinash.sociopulse.models.User
+import com.avinash.sociopulse.util.UserUtil
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter
 import com.firebase.ui.firestore.FirestoreRecyclerOptions
 import com.google.firebase.firestore.FirebaseFirestore

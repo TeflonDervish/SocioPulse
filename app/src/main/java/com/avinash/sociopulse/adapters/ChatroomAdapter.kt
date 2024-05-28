@@ -1,4 +1,4 @@
-package com.avinash.chatx.adapters
+package com.avinash.sociopulse.adapters
 
 import android.content.Context
 import android.os.Bundle
@@ -7,10 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.avinash.chatx.ChatFragment
-import com.avinash.chatx.MainActivity
-import com.avinash.chatx.R
-import com.avinash.chatx.models.Chatroom
+import com.avinash.sociopulse.ChatFragment
+import com.avinash.sociopulse.MainActivity
+import com.avinash.sociopulse.R
+import com.avinash.sociopulse.models.Chatroom
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter
 import com.firebase.ui.firestore.FirestoreRecyclerOptions
 

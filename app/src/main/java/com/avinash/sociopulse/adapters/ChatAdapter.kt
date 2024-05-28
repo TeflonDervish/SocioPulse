@@ -1,13 +1,13 @@
-package com.avinash.chatx.adapters
+package com.avinash.sociopulse.adapters
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.avinash.chatx.R
-import com.avinash.chatx.models.Chat
-import com.avinash.chatx.util.UserUtil
+import com.avinash.sociopulse.R
+import com.avinash.sociopulse.models.Chat
+import com.avinash.sociopulse.util.UserUtil
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter
 import com.firebase.ui.firestore.FirestoreRecyclerOptions
 

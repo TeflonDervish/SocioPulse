@@ -1,4 +1,4 @@
-package com.avinash.chatx
+package com.avinash.sociopulse
 
 import org.junit.Assert.assertEquals
 import org.junit.Test

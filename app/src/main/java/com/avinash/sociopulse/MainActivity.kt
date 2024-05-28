@@ -1,12 +1,12 @@
-package com.avinash.chatx
+package com.avinash.sociopulse
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.avinash.chatx.auth.AuthenticationActivity
-import com.avinash.chatx.databinding.ActivityMainBinding
-import com.avinash.chatx.util.UserUtil
+import com.avinash.sociopulse.auth.AuthenticationActivity
+import com.avinash.sociopulse.databinding.ActivityMainBinding
+import com.avinash.sociopulse.util.UserUtil
 import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {

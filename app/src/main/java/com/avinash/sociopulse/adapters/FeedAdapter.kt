@@ -1,4 +1,4 @@
-package com.avinash.chatx.adapters
+package com.avinash.sociopulse.adapters
 
 import android.content.Context
 import android.content.Intent
@@ -10,9 +10,9 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.avinash.chatx.CommentsActivity
-import com.avinash.chatx.R
-import com.avinash.chatx.models.Post
+import com.avinash.sociopulse.CommentsActivity
+import com.avinash.sociopulse.R
+import com.avinash.sociopulse.models.Post
 import com.bumptech.glide.Glide
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter
 import com.firebase.ui.firestore.FirestoreRecyclerOptions

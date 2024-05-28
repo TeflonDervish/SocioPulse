@@ -1,4 +1,4 @@
-package com.avinash.chatx
+package com.avinash.sociopulse
 
 import android.app.Activity
 import android.content.Intent
@@ -8,9 +8,9 @@ import android.text.TextUtils
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.avinash.chatx.databinding.ActivityCreatePostBinding
-import com.avinash.chatx.models.Post
-import com.avinash.chatx.models.User
+import com.avinash.sociopulse.databinding.ActivityCreatePostBinding
+import com.avinash.sociopulse.models.Post
+import com.avinash.sociopulse.models.User
 import com.github.dhaval2404.imagepicker.ImagePicker
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore

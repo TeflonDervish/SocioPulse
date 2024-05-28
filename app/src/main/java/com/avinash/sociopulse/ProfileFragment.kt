@@ -1,4 +1,4 @@
-package com.avinash.chatx
+package com.avinash.sociopulse
 
 import android.app.Activity
 import android.content.Intent
@@ -10,10 +10,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.avinash.chatx.auth.AuthenticationActivity
-import com.avinash.chatx.databinding.FragmentProfileBinding
-import com.avinash.chatx.models.User
-import com.avinash.chatx.util.UserUtil
+import com.avinash.sociopulse.auth.AuthenticationActivity
+import com.avinash.sociopulse.databinding.FragmentProfileBinding
+import com.avinash.sociopulse.models.User
+import com.avinash.sociopulse.util.UserUtil
 import com.bumptech.glide.Glide
 import com.github.dhaval2404.imagepicker.ImagePicker
 import com.google.firebase.auth.FirebaseAuth

@@ -3,6 +3,7 @@
   <component name="SonarLintProjectSettings">
     <option name="moduleMapping">
       <map>
+        <entry key="ChatX" value="SocioPulse" />
         <entry key="chatx-social-media" value="ChatX" />
       </map>
     </option>

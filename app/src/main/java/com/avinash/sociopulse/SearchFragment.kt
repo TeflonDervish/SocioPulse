@@ -1,4 +1,4 @@
-package com.avinash.chatx
+package com.avinash.sociopulse
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,10 +10,10 @@ import android.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.avinash.chatx.adapters.SearchAdapter
-import com.avinash.chatx.databinding.FragmentSearchBinding
-import com.avinash.chatx.models.User
-import com.avinash.chatx.util.UserUtil
+import com.avinash.sociopulse.adapters.SearchAdapter
+import com.avinash.sociopulse.databinding.FragmentSearchBinding
+import com.avinash.sociopulse.models.User
+import com.avinash.sociopulse.util.UserUtil
 import com.firebase.ui.firestore.FirestoreRecyclerOptions
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore

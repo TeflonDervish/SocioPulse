@@ -1,4 +1,4 @@
-package com.avinash.chatx
+package com.avinash.sociopulse
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,9 +8,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.avinash.chatx.adapters.FeedAdapter
-import com.avinash.chatx.databinding.FragmentFeedBinding
-import com.avinash.chatx.models.Post
+import com.avinash.sociopulse.adapters.FeedAdapter
+import com.avinash.sociopulse.databinding.FragmentFeedBinding
+import com.avinash.sociopulse.models.Post
 import com.firebase.ui.firestore.FirestoreRecyclerOptions
 import com.google.firebase.firestore.FirebaseFirestore
 

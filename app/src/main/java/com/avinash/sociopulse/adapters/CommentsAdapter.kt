@@ -1,4 +1,4 @@
-package com.avinash.chatx.adapters
+package com.avinash.sociopulse.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.avinash.chatx.R
-import com.avinash.chatx.models.Comment
+import com.avinash.sociopulse.R
+import com.avinash.sociopulse.models.Comment
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter
 import com.firebase.ui.firestore.FirestoreRecyclerOptions
 import com.github.thunder413.datetimeutils.DateTimeStyle

@@ -1,9 +1,9 @@
-package com.avinash.chatx.auth
+package com.avinash.sociopulse.auth
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.avinash.chatx.R
-import com.avinash.chatx.databinding.ActivityAuthenticationBinding
+import com.avinash.sociopulse.R
+import com.avinash.sociopulse.databinding.ActivityAuthenticationBinding
 
 class AuthenticationActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -1,4 +1,4 @@
-package com.avinash.chatx.models
+package com.avinash.sociopulse.models
 
 data class Comment(
     val text: String = "",

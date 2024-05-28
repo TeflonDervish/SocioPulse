@@ -1,13 +1,13 @@
-package com.avinash.chatx
+package com.avinash.sociopulse
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.avinash.chatx.adapters.CommentsAdapter
-import com.avinash.chatx.databinding.ActivityCommentsBinding
-import com.avinash.chatx.models.Comment
-import com.avinash.chatx.util.UserUtil
+import com.avinash.sociopulse.adapters.CommentsAdapter
+import com.avinash.sociopulse.databinding.ActivityCommentsBinding
+import com.avinash.sociopulse.models.Comment
+import com.avinash.sociopulse.util.UserUtil
 import com.firebase.ui.firestore.FirestoreRecyclerOptions
 import com.google.firebase.firestore.FirebaseFirestore
 

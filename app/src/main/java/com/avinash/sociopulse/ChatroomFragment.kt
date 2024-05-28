@@ -1,4 +1,4 @@
-package com.avinash.chatx
+package com.avinash.sociopulse
 
 import android.app.AlertDialog
 import android.os.Bundle
@@ -9,9 +9,9 @@ import android.widget.EditText
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.avinash.chatx.adapters.ChatroomAdapter
-import com.avinash.chatx.databinding.FragmentChatroomBinding
-import com.avinash.chatx.models.Chatroom
+import com.avinash.sociopulse.adapters.ChatroomAdapter
+import com.avinash.sociopulse.databinding.FragmentChatroomBinding
+import com.avinash.sociopulse.models.Chatroom
 import com.firebase.ui.firestore.FirestoreRecyclerOptions
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
@@ -45,14 +45,14 @@ class ChatroomFragment : Fragment() {
             val alertDialog: AlertDialog.Builder = AlertDialog.Builder(context)
 
             val editText = EditText(context)
-            alertDialog.setTitle("Create Chatroom")
-            alertDialog.setMessage("Enter the name of the new chatroom that you want to create")
+            alertDialog.setTitle("Создать обсуждение")
+            alertDialog.setMessage("Введите название нового чата, который вы хотите создать")
 
             alertDialog.setView(editText)
 
             var textEntered = ""
 
-            alertDialog.setPositiveButton("Create") { dialogInterface, i ->
+            alertDialog.setPositiveButton("Создать") { dialogInterface, i ->
                 textEntered = editText.text.toString()
                 val document = FirebaseFirestore.getInstance().collection("Chatrooms").document()
                 val chatroom = Chatroom(textEntered, document.id)
@@ -60,7 +60,7 @@ class ChatroomFragment : Fragment() {
                 document.set(chatroom)
             }
 
-            alertDialog.setNegativeButton("Cancel") { dialogInterface, i ->
+            alertDialog.setNegativeButton("Назад") { dialogInterface, i ->
                 dialogInterface.dismiss()
             }
             alertDialog.show()

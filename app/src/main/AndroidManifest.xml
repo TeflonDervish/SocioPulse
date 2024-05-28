@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.avinash.chatx">
+    package="com.avinash.sociopulse">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name_chatx"
+        android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ChatX"
         tools:replace="android:label">
         <activity
-            android:name=".CommentsActivity"
+            android:name="com.avinash.sociopulse.CommentsActivity"
             android:exported="true" />
         <activity
-            android:name=".CreatePostActivity"
+            android:name="com.avinash.sociopulse.CreatePostActivity"
             android:exported="true" />
         <activity
-            android:name=".auth.AuthenticationActivity"
+            android:name="com.avinash.sociopulse.auth.AuthenticationActivity"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.avinash.sociopulse.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

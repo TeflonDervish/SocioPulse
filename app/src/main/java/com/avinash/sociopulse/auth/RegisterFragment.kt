@@ -1,4 +1,4 @@
-package com.avinash.chatx.auth
+package com.avinash.sociopulse.auth
 
 import android.content.Intent
 import android.os.Bundle
@@ -10,10 +10,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.avinash.chatx.MainActivity
-import com.avinash.chatx.R
-import com.avinash.chatx.databinding.FragmentRegisterBinding
-import com.avinash.chatx.models.User
+import com.avinash.sociopulse.MainActivity
+import com.avinash.sociopulse.R
+import com.avinash.sociopulse.databinding.FragmentRegisterBinding
+import com.avinash.sociopulse.models.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 

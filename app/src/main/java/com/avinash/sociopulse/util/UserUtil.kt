@@ -1,6 +1,6 @@
-package com.avinash.chatx.util
+package com.avinash.sociopulse.util
 
-import com.avinash.chatx.models.User
+import com.avinash.sociopulse.models.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
