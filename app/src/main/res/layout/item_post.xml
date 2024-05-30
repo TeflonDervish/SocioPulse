@@ -12,6 +12,21 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <TextView
+            android:id="@+id/statistic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:text="@string/statictic"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/variants" />
+
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/user_image"
             android:layout_width="40dp"
@@ -38,13 +53,12 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:layout_marginTop="4dp"
             android:textColor="@color/black"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/user_image"
-            app:layout_constraintTop_toBottomOf="@+id/post_author"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/user_image"
             tools:text="This is a post description" />
 
         <TextView
@@ -52,6 +66,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
+            android:textSize="23sp"
+            app:layout_constraintBottom_toTopOf="@+id/post_text"
             app:layout_constraintStart_toEndOf="@+id/user_image"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Author Name" />
@@ -62,9 +78,11 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:layout_marginTop="8dp"
+            android:textSize="15sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="HH:MM:SS" />
+
 
         <ImageView
             android:id="@+id/post_like_btn"
@@ -74,7 +92,7 @@
             android:src="@drawable/like_icon_outline"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/feed_post_image" />
+            app:layout_constraintTop_toBottomOf="@+id/variants" />
 
         <TextView
             android:id="@+id/like_count"
@@ -84,7 +102,7 @@
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@id/post_like_btn"
-            app:layout_constraintTop_toBottomOf="@+id/feed_post_image"
+            app:layout_constraintTop_toBottomOf="@+id/variants"
             tools:text="1000" />
 
         <ImageView
@@ -93,8 +111,9 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:src="@drawable/comment_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@id/like_count"
-            app:layout_constraintTop_toBottomOf="@+id/feed_post_image" />
+            app:layout_constraintTop_toBottomOf="@+id/variants" />
 
         <TextView
             android:id="@+id/comment_count"
@@ -103,8 +122,55 @@
             android:layout_marginStart="4dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@id/post_comment_btn"
-            app:layout_constraintTop_toBottomOf="@+id/feed_post_image"
+            app:layout_constraintTop_toBottomOf="@+id/variants"
             tools:text="1000" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/variants"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/feed_post_image"
+            app:singleLine="true"
+            app:singleSelection="true">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chose_yes"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10sp"
+                android:text="@string/chose_yes"
+                android:theme="@style/Theme.ChatX" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chose_probably_yes"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10sp"
+                android:text="@string/chose_probably_yes"
+                android:theme="@style/Theme.ChatX" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chose_probably_not"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10sp"
+                android:text="@string/chose_probably_not"
+                android:theme="@style/Theme.ChatX" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chose_no"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/choise_no"
+                android:theme="@style/Theme.ChatX" />
+        </com.google.android.material.chip.ChipGroup>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

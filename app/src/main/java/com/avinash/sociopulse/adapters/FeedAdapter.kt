@@ -14,6 +14,7 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.avinash.sociopulse.CommentsActivity
 import com.avinash.sociopulse.R
+import com.avinash.sociopulse.StatisticActivity
 import com.avinash.sociopulse.models.Post
 import com.avinash.sociopulse.util.UserUtil
 import com.bumptech.glide.Glide
@@ -40,6 +41,7 @@ class FeedAdapter(options: FirestoreRecyclerOptions<Post>, val context: Context)
         val authorText: TextView = itemView.findViewById(R.id.post_author)
         val timeText: TextView = itemView.findViewById(R.id.post_time)
         val postText: TextView = itemView.findViewById(R.id.post_text)
+        val statictic: TextView = itemView.findViewById(R.id.statistic)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FeedViewHolder {
@@ -70,6 +72,7 @@ class FeedAdapter(options: FirestoreRecyclerOptions<Post>, val context: Context)
 
         val firestore = FirebaseFirestore.getInstance()
         val userId = FirebaseAuth.getInstance().currentUser?.uid
+
 
         val postDocument =
             firestore.collection("Posts")
@@ -145,6 +148,13 @@ class FeedAdapter(options: FirestoreRecyclerOptions<Post>, val context: Context)
             val intent = Intent(context, CommentsActivity::class.java)
             intent.putExtra("postId", snapshots.getSnapshot(holder.absoluteAdapterPosition).id)
             context.startActivity(intent)
+        }
+
+        holder.statictic.setOnClickListener{
+            val intent = Intent(context, StatisticActivity::class.java)
+            intent.putExtra("postId", snapshots.getSnapshot(holder.absoluteAdapterPosition).id)
+            context.startActivity(intent)
+
         }
     }
 

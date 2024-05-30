@@ -14,16 +14,19 @@
         android:theme="@style/Theme.ChatX"
         tools:replace="android:label">
         <activity
-            android:name="com.avinash.sociopulse.CommentsActivity"
+            android:name=".StatisticActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CommentsActivity"
             android:exported="true" />
         <activity
-            android:name="com.avinash.sociopulse.CreatePostActivity"
+            android:name=".CreatePostActivity"
             android:exported="true" />
         <activity
-            android:name="com.avinash.sociopulse.auth.AuthenticationActivity"
+            android:name=".auth.AuthenticationActivity"
             android:exported="true" />
         <activity
-            android:name="com.avinash.sociopulse.MainActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

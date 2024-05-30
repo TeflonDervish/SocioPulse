@@ -27,6 +27,9 @@ class CommentsActivity : AppCompatActivity() {
         postId = intent.getStringExtra("postId")
         recyclerView = binding.commentsRecyclerView
 
+
+
+
         setUpRecyclerView()
 
         binding.commentSendIcon.setOnClickListener {

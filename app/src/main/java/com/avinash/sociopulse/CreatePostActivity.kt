@@ -50,6 +50,7 @@ class CreatePostActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
             addPost(text)
+            startActivity(Intent(this, MainActivity::class.java))
         }
     }
 

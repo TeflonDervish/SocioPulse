@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.avinash.sociopulse" />
+                  <option name="mobileSdkAppId" value="1:543437425347:android:80df245b452834c564b076" />
+                  <option name="projectId" value="sociopulse-ad8a5" />
+                  <option name="projectNumber" value="543437425347" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

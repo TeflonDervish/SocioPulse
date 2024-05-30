@@ -26,4 +26,10 @@
     <string name="tell_us_about_yourself">Расскажите нам о себе</string>
     <string name="logout">Выйти</string>
     <string name="save">Сохранить</string>
+    <string name="statictic">Статистика</string>
+    <string name="chose_yes">Да</string>
+    <string name="chose_no">Нет</string>
+    <string name="choise_no">Нет</string>
+    <string name="chose_probably_not">Скорее, нет</string>
+    <string name="chose_probably_yes">Скорее, да</string>
 </resources>
