@@ -127,9 +127,12 @@
 
         <com.google.android.material.chip.ChipGroup
             android:id="@+id/variants"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/feed_post_image"
             app:singleLine="true"
@@ -140,35 +143,35 @@
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="10sp"
+                android:layout_marginEnd="18sp"
                 android:text="@string/chose_yes"
-                android:theme="@style/Theme.ChatX" />
+                android:theme="@style/Theme.SocioPulse" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chose_probably_yes"
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="10sp"
                 android:text="@string/chose_probably_yes"
-                android:theme="@style/Theme.ChatX" />
+                android:theme="@style/Theme.SocioPulse"
+                android:layout_marginEnd="18sp" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chose_probably_not"
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="10sp"
                 android:text="@string/chose_probably_not"
-                android:theme="@style/Theme.ChatX" />
+                android:theme="@style/Theme.SocioPulse"
+                android:layout_marginEnd="18sp"/>
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chose_no"
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/choise_no"
-                android:theme="@style/Theme.ChatX" />
+                android:text="@string/chose_no"
+                android:theme="@style/Theme.SocioPulse" />
         </com.google.android.material.chip.ChipGroup>
 
 
