@@ -1,8 +1,11 @@
 package com.avinash.sociopulse
 
+import android.content.Context
 import android.media.Image
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.AttributeSet
+import android.view.View
 import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
@@ -26,10 +29,20 @@ class StatisticActivity : AppCompatActivity() {
     private lateinit var progressProbablyYes: ProgressBar
     private lateinit var progressProbablyNot: ProgressBar
     private lateinit var progressNot: ProgressBar
-
-
     private val TAG = "StatisticActivity"
     private lateinit var db: FirebaseFirestore
+
+    override fun onCreateView(
+        parent: View?,
+        name: String,
+        context: Context,
+        attrs: AttributeSet
+    ): View? {
+        return super.onCreateView(parent, name, context, attrs)
+
+    }
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_statistic)
