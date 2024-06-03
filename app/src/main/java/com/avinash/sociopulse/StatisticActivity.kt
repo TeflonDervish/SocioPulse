@@ -4,6 +4,7 @@ import android.media.Image
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
+import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
 import com.avinash.sociopulse.models.Post
@@ -21,6 +22,12 @@ class StatisticActivity : AppCompatActivity() {
     private lateinit var post_text: TextView
     private lateinit var post_time: TextView
     private lateinit var post_image: ImageView
+    private lateinit var progressYes: ProgressBar
+    private lateinit var progressProbablyYes: ProgressBar
+    private lateinit var progressProbablyNot: ProgressBar
+    private lateinit var progressNot: ProgressBar
+
+
     private val TAG = "StatisticActivity"
     private lateinit var db: FirebaseFirestore
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,6 +43,11 @@ class StatisticActivity : AppCompatActivity() {
         post_text = findViewById<TextView>(R.id.post_text)
         post_time = findViewById<TextView>(R.id.post_time)
         post_image = findViewById<ImageView>(R.id.feed_post_image)
+
+        progressYes = findViewById(R.id.progressYes)
+        progressProbablyYes = findViewById(R.id.progressProbablyYes)
+        progressProbablyNot = findViewById(R.id.progressProbablyNot)
+        progressNot = findViewById(R.id.progressNot)
 
         val postDoc = db.collection("Posts")
             .document(postId!!).get().addOnCompleteListener { it ->
@@ -60,6 +72,17 @@ class StatisticActivity : AppCompatActivity() {
                         .centerCrop()
                         .placeholder(R.drawable.person_icon_black)
                         .into(user_image)
+
+                    val count: Int = post.listYes.size +
+                            post.listProbablyYes.size +
+                            post.listProbablyNo.size +
+                            post.listNot.size
+
+                    progressYes.setProgress(100 * post.listYes.size / count)
+                    progressProbablyYes.setProgress(100 * post.listProbablyYes.size / count)
+                    progressProbablyNot.setProgress(100 * post.listProbablyNo.size / count)
+                    progressNot.setProgress(100 * post.listNot.size / count)
+
 
                 } else {
             Toast.makeText(

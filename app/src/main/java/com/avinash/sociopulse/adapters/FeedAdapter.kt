@@ -2,7 +2,6 @@ package com.avinash.sociopulse.adapters
 
 import android.content.Context
 import android.content.Intent
-import android.media.Image
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -22,6 +21,8 @@ import com.firebase.ui.firestore.FirestoreRecyclerAdapter
 import com.firebase.ui.firestore.FirestoreRecyclerOptions
 import com.github.thunder413.datetimeutils.DateTimeStyle
 import com.github.thunder413.datetimeutils.DateTimeUtils
+import com.google.android.material.chip.Chip
+import com.google.android.material.chip.ChipGroup
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -42,6 +43,12 @@ class FeedAdapter(options: FirestoreRecyclerOptions<Post>, val context: Context)
         val timeText: TextView = itemView.findViewById(R.id.post_time)
         val postText: TextView = itemView.findViewById(R.id.post_text)
         val statictic: TextView = itemView.findViewById(R.id.statistic)
+        val variants: ChipGroup = itemView.findViewById(R.id.variants)
+
+        val chose_yes: Chip = itemView.findViewById(R.id.chose_yes)
+        val chose_probably_yes: Chip = itemView.findViewById(R.id.chose_probably_yes)
+        val chose_probably_not: Chip = itemView.findViewById(R.id.chose_probably_not)
+        val chose_no: Chip = itemView.findViewById(R.id.chose_no)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FeedViewHolder {
@@ -113,9 +120,7 @@ class FeedAdapter(options: FirestoreRecyclerOptions<Post>, val context: Context)
                                     R.drawable.like_icon_outline
                                 )
                             )
-                            val postMake =
-                                Post(post.text, post.imageUrl, post.user!!, System.currentTimeMillis(), post.likeList)
-                            postDocument.set(postMake)
+                            postDocument.set(post)
 
                         } else {
                             userId?.let { userId ->
@@ -127,14 +132,59 @@ class FeedAdapter(options: FirestoreRecyclerOptions<Post>, val context: Context)
                                     R.drawable.icon_like_fill
                                 )
                             )
-                            val postMake =
-                                Post(post.text, post.imageUrl, post.user!!, System.currentTimeMillis(), post.likeList)
-                            postDocument.set(postMake)
+                            postDocument.set(post)
                         }
                     }
 //                    Setting the post details of current user: Updated One
                     postDocument.set(post)
                 }
+
+                post?.listYes?.let { list ->
+                    if(list.contains(userId)) {
+                        holder.chose_yes.isChecked = true
+                    }
+                }
+
+                post?.listProbablyYes?.let { list ->
+                    if(list.contains(userId)){
+                        holder.chose_probably_yes.isChecked = true
+                    }
+                }
+
+                post?.listProbablyNo?.let { list ->
+                    if(list.contains(userId)){
+                        holder.chose_probably_not.isChecked = true
+                    }
+                }
+
+                post?.listNot?.let { list ->
+                    if(list.contains(userId)){
+                        holder.chose_no.isChecked = true
+                    }
+                }
+
+                holder.variants.setOnCheckedChangeListener{ group, checkedId ->
+
+                    post?.listYes?.remove(userId)
+                    post?.listProbablyYes?.remove(userId)
+                    post?.listProbablyNo?.remove(userId)
+                    post?.listNot?.remove(userId)
+
+                    if (checkedId == R.id.chose_yes) {
+                        post?.listYes?.add(userId.toString())
+                    }
+                    else if (checkedId == R.id.chose_probably_yes) {
+                        post?.listProbablyYes?.add(userId!!)
+                    }
+                    else if (checkedId == R.id.chose_probably_not) {
+                        post?.listProbablyNo?.add(userId!!)
+                    }
+                    else if (checkedId == R.id.chose_no) {
+                        post?.listNot?.add(userId!!)
+                    }
+                    postDocument.set(post!!)
+                }
+
             } else {
                 Toast.makeText(
                     context,
